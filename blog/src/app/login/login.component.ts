@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public loginForm;
+
+  constructor(private _form: FormBuilder, private http: HttpClient) {
+    this.loginForm = this.createForm();
+  }
 
   ngOnInit() {
   }
 
+  login() {
+    // this.http.post()
+  }
+
+  createForm() {
+    const group = this._form.group({
+      username: [''],
+      password: ['']
+    });
+    return group;
+  }
 }

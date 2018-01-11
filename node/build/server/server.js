@@ -8,12 +8,8 @@ var logger = require('morgan');
 var app = express();
 // 使用中间件记录日志
 app.use(logger('dev'));
-app.get('/api', function (req, res) {
+app.get('/', function (req, res) {
     var json_data = { "name": "amita", "pass": "12345" };
-    res.json(json_data);
-});
-app.get('/api/login', function (req, res) {
-    var json_data = { "name": "zhangsan", "pass": "1234566+78" };
     res.json(json_data);
 });
 // 处理404错误

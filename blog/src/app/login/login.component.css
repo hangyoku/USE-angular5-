@@ -1,0 +1,76 @@
+
+.floatfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.floatfix {
+  *zoom: 1;
+}
+
+
+.out {
+  width: 100%;
+  height:100%;
+  background-image: url("../../assets/images/value.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.form-group {
+  padding-bottom: 30px;
+}
+
+.form-group input {
+  height: 24px;
+}
+
+
+.form-group {
+  padding: 0 20px 10px;
+}
+
+.form-group {
+  height: 40px;
+}
+
+.form-group label {
+  width: 43px;
+  text-align: right;
+  display: inline-block;
+}
+
+.form-group input {
+  border: 1px solid #c0c0c0;
+  border-radius: 3px;
+  padding: 6px 5px;
+  margin-left: 20px;
+}
+
+section {
+  width: 320px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -160px;
+  margin-top: -125px;
+}
+
+input {
+  width: 275px;
+  background: #fff;
+  margin: 0;
+}
+
+button {
+  border: none;
+  width: 90px;
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+  background: #ff0036;
+  color: #fff;
+  cursor: pointer;
+}
+
