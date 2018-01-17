@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
+import {MainService} from "../shared/services/main.service";
 
 @Component({
   selector: 'app-login',
@@ -11,18 +11,19 @@ export class LoginComponent implements OnInit {
 
   public loginForm;
 
-  constructor(private _form: FormBuilder, private http: HttpClient) {
+  constructor(private _form: FormBuilder, private service: MainService) {
     this.loginForm = this.createForm();
   }
 
-  ngOnInit() {
-    this.http.get('/api/login').subscribe(data => {
-      console.log(data);
-    });
-  }
+  ngOnInit() {}
 
   login() {
-    this.http.post('/api/login', {name: 'zhangsan', age: 18}).subscribe(data => {
+    this.service.request({
+      method: 'POST',
+      url: '/api/login',
+      data: this.loginForm.value,
+      header: '+++++++++++++++++++1321365456423132132132132++++++++++++++++'
+    }).subscribe(data => {
       console.log(data);
     });
   }

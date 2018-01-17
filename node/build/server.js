@@ -1,48 +1,30 @@
+"use strict";
 /**
  * Created by wdg01 on 2018/1/11.
  */
-
-import * as express from 'express'
-
-const bodyParser = require('body-parser');
-const logger = require('morgan');
-<<<<<<< HEAD
-const login = require('../routes/login');
-const app = express();
-// 使用中间件记录日志
-app.use(logger('dev'));
-
-
-// 使用登录路由
-app.use('/api/login', login);
-
-=======
-const util = require('util');
-const app = express();
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var express = require("express");
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var util = require('util');
+var app = express();
 // 使用bodyParser中间件
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
+app.use(bodyParser.urlencoded({ extended: false }));
 // 使用中间件记录日志  在控制台上会打印出日志
 app.use(logger('dev'));
-
-app.get('/', (req, res) => {
-    res.json({name: 'wangwu', sex: 'male'});
+app.get('/', function (req, res) {
+    res.json({ name: 'wangwu', sex: 'male' });
 });
-app.get('/api', (req, res) => {
-    const json_data = {"name": "amita", "pass": "12345"};
+app.get('/api', function (req, res) {
+    var json_data = { "name": "amita", "pass": "12345" };
     res.json(json_data);
 });
-
 // 处理请求
-app.post('/api/login', (req, res) => {
-    let json_data = req.body;
+app.post('/api/login', function (req, res) {
+    var json_data = req.body;
     res.json(json_data);
 });
->>>>>>> 6aacf5802b72bb78cafb4cfcd0814458da2bcf27
-
-
 // 处理404错误
 // app.use((req, res, next) =>{
 //     const err = new Error('Not Found');
@@ -60,8 +42,6 @@ app.post('/api/login', (req, res) => {
 //     res.render('error');
 //
 // });
-
-app.listen(3000, "127.0.0.1", () => {
+app.listen(3000, "127.0.0.1", function () {
     console.log("服务器已启动,地址为：http://127.0.0.1:3000");
 });
-

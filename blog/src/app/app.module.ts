@@ -1,10 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {PreloadingService} from "./shared/services/pre-loading.service";
 import {HttpClientModule} from "@angular/common/http";
+import {MainService} from "./shared/services/main.service";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [PreloadingService],
+  providers: [PreloadingService, MainService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
