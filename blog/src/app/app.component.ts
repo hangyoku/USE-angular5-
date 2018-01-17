@@ -8,21 +8,21 @@ import {HttpClient} from "@angular/common/http";
 })
 export class AppComponent implements OnInit {
 
-  title = 'app';
+   public title = 'app';
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
   }
-  get() {
-    this.http.get('/api/login').subscribe(data => {
-      console.log(data);
-    });
-  }
-  get1() {
-    this.http.get('/api').subscribe(data => {
-      console.log(data);
-    });
-  }
+  // get() {
+  //   this.http.get('/api/login').subscribe(data => {
+  //     console.log(data);
+  //   });
+  // }
+  // get1() {
+  //   this.http.get('/api').subscribe(data => {
+  //     console.log(data);
+  //   });
+  // }
 }
