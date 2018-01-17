@@ -6,6 +6,17 @@ import * as express from 'express'
 
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+<<<<<<< HEAD
+const login = require('../routes/login');
+const app = express();
+// 使用中间件记录日志
+app.use(logger('dev'));
+
+
+// 使用登录路由
+app.use('/api/login', login);
+
+=======
 const util = require('util');
 const app = express();
 
@@ -29,6 +40,7 @@ app.post('/api/login', (req, res) => {
     let json_data = req.body;
     res.json(json_data);
 });
+>>>>>>> 6aacf5802b72bb78cafb4cfcd0814458da2bcf27
 
 
 // 处理404错误

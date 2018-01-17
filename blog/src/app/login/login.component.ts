@@ -15,8 +15,7 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.createForm();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   login() {
     this.service.request({
@@ -33,7 +32,7 @@ export class LoginComponent implements OnInit {
     const group = this._form.group({
       username: [''],
       password: ['']
-    });
+  });
     return group;
   }
 }
