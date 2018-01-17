@@ -16,17 +16,22 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.http.get('/api/login').subscribe(data => {
+      console.log(data);
+    });
   }
 
   login() {
-    // this.http.post()
+    this.http.post('/api/login', {name: 'zhangsan', age: 18}).subscribe(data => {
+      console.log(data);
+    });
   }
 
   createForm() {
     const group = this._form.group({
       username: [''],
       password: ['']
-    });
+  });
     return group;
   }
 }

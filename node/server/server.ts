@@ -4,20 +4,15 @@
 
 import * as express from 'express'
 const logger = require('morgan');
+const login = require('../routes/login');
 const app = express();
-
 // 使用中间件记录日志
 app.use(logger('dev'));
 
-app.get('/api', (req, res) => {
-    const json_data = {"name":"amita","pass":"12345"};
-    res.json(json_data);
-});
 
-app.get('/api/login', (req, res) => {
-    const json_data = {"name":"zhangsan","pass":"1234566+78"};
-    res.json(json_data);
-});
+// 使用登录路由
+app.use('/api/login', login);
+
 
 // 处理404错误
 app.use((req, res, next) =>{

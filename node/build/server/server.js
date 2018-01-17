@@ -5,13 +5,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var logger = require('morgan');
+var login = require('../routes/login');
 var app = express();
 // 使用中间件记录日志
 app.use(logger('dev'));
-app.get('/', function (req, res) {
-    var json_data = { "name": "amita", "pass": "12345" };
-    res.json(json_data);
-});
+// 使用登录路由
+app.use('/api/login', login);
 // 处理404错误
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
